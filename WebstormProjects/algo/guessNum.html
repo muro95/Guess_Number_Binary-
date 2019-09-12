@@ -7,18 +7,59 @@
 <body>
 
 </body>
-    <script>
-        let nums = [];
-        for (let i = 0; i < 100; i ++){
-            nums[i] = Math.floor(Math.random()*100);
-        }
+<script>
+    let arr = [];
+    for (let i = 0; i < 100; i++) {
+        arr.push(i);
+    }
 
-        let numGuess = parseInt(prompt("Enter your number: "));
+    let numSecret = Math.floor(Math.random() * 100);
 
-        function search(arr, num) {
-            for (let i = 0; i < nums.length; i ++){
-
+    function isLeaner(arr, value) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === value) {
+                document.write(arr[i] + ' is the secret number ');
+                break;
             }
         }
-    </script>
+    }
+
+    isLeaner(arr, numSecret);
+    document.write('<br>');
+
+    function isBinary(arr, value) {
+        let j = Math.floor(arr.length / 2);
+        if (arr[i] === value) {
+            document.write(arr[i] + ' is the secret number');
+        }
+        if (arr[i] < value) {
+            for (let i = j + 1; i < arr.length; i++) {
+                if (arr[i] === value) {
+                    document.write(arr[i] + ' is the secret number');
+                }
+            }
+        } else for (let k = j - 1; k >= 0; k--) {
+            if (arr[i] === value) {
+                document.write(arr[i] + ' is the secret number');
+            }
+        }
+
+    }
+    isBinary(arr,numSecret)
+
+    // let numGuess = parseInt(prompt("Enter your number: "));
+
+
+    // function search(arr, num) {
+    //     for (let i = 0; i < nums.length; i ++){
+    //         if (arr[i] > num){
+    //             alert('Try lower number');
+    //         } else if (arr[i] < num){
+    //             alert('Try higher number');
+    //         }else if ( arr[i] === num){
+    //             alert('Congrats! You won');
+    //         }
+    //     }
+    // }
+</script>
 </html>
